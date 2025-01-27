@@ -6,7 +6,7 @@ public class supportClass
 {
     
     // 1st Method Print The board
-    public void printBoard(char[,] aGameBoard)
+    public static void printBoard(char[,] aGameBoard)
     {
         //Print out a string 
 
