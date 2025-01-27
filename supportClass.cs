@@ -4,11 +4,12 @@ namespace tictactoe_assignment4;
 
 public class supportClass
 {
+    public static int _methodCount = 0;
     
     // 1st Method Print The board
     public static void printBoard(char[,] aGameBoard)
     {
-        //Print out a string 
+        
 
         for (int i = 0; i < aGameBoard.GetLength(0); i++) // loops through Column
         {
@@ -20,7 +21,7 @@ public class supportClass
             }
             
             Console.WriteLine();
-            if (i < aGameBoard.GetLength(0) - 1) Console.Write("------------");
+            if (i < aGameBoard.GetLength(0) - 1) Console.Write("----------");
             // This puts a line between each row 
             Console.WriteLine();
         }
@@ -32,6 +33,7 @@ public class supportClass
     public static (bool bResult, string sWinnerName, bool bCat) displayWinner(char[,] aGameBoard)
     {
         //Sets variables
+        _methodCount++;         
         bool bResult = false;
         string sWinnerName = "";
         bool bCat = false;
@@ -75,6 +77,14 @@ public class supportClass
             bResult = true;
             sWinnerName = aGameBoard[1, 1].ToString();
         }
+        
+        if (_methodCount > 9)
+        {
+            bResult = true;
+            sWinnerName = "No one! It's a draw"; 
+        }
+        
+        
         
         // Returns array, first value as True or False, and second value as winner if winner exists. 
         return (bResult, sWinnerName, bCat);
