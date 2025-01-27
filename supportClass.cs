@@ -20,10 +20,12 @@ public class supportClass
             }
             
             Console.WriteLine();
-            if (i != aGameBoard.GetLength(1) - 1) Console.Write("----------");
+            if (i < aGameBoard.GetLength(0) - 1) Console.Write("--------");
             // This puts a line between each row 
-            
+            Console.WriteLine();
         }
+       
+        
     }
     
     
