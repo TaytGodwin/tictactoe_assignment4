@@ -25,7 +25,7 @@ internal class Program
                 aaBoard = getInput(2, aaBoard);
             }
         }
-        
+
         //• Print the board one last time
         //• Show the winner
     }
