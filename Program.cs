@@ -23,6 +23,7 @@ internal class Program
             // Get player 1 input
             aaBoard = getInput(1, aaBoard);
 
+
             // Check if there is a winner now
             if (supportClass.displayWinner(aaBoard).Item1 == false) // if false, get second player input, if not it will exit this loop automatically
             {
@@ -34,7 +35,7 @@ internal class Program
         //• Print the board one last time
         supportClass.printBoard(aaBoard);
         //• Show the winner
-        Console.WriteLine($"The winner is {supportClass.displayWinner(aaBoard).Item2}!");
+        Console.WriteLine($"{supportClass.displayWinner(aaBoard).Item2} is the winner!");
     }
 
     // Function to check integer input between 1 & 3

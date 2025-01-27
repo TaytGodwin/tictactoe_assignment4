@@ -29,11 +29,12 @@ public class supportClass
     }
     
     
-    public static (bool bResult, string sWinnerName) displayWinner(char[,] aGameBoard)
+    public static (bool bResult, string sWinnerName, bool bCat) displayWinner(char[,] aGameBoard)
     {
         //Sets variables
         bool bResult = false;
         string sWinnerName = "";
+        bool bCat = false;
        
         // Checks for row match
         for (int i = 0; i < aGameBoard.GetLength(0); i++) 
@@ -76,6 +77,6 @@ public class supportClass
         }
         
         // Returns array, first value as True or False, and second value as winner if winner exists. 
-        return (bResult, sWinnerName);
+        return (bResult, sWinnerName, bCat);
     }
 }
