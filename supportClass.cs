@@ -37,7 +37,7 @@ public class supportClass
         for (int i = 0; i < aGameBoard.GetLength(0); i++) 
         {
             int j = 0;
-            if (aGameBoard[i, j] == aGameBoard[i, j + 1] && aGameBoard[i, j + 1] == aGameBoard[i, j + 2])
+            if (aGameBoard[i, j] == aGameBoard[i, j + 1] && aGameBoard[i, j + 1] == aGameBoard[i, j + 2] && aGameBoard[i, 0] != ' ' && aGameBoard[i, 1] != ' ' && aGameBoard[i, 2] != ' ')
             {
                 bResult = true;
                 sWinnerName = aGameBoard[i, j].ToString();
@@ -49,7 +49,7 @@ public class supportClass
         for (int j = 0; j < aGameBoard.GetLength(0); j++) 
         {
             int i = 0;
-            if (aGameBoard[i, j] == aGameBoard[i + 1 , j] && aGameBoard[i + 1, j ] == aGameBoard[i + 2, j])
+            if (aGameBoard[i, j] == aGameBoard[i + 1 , j] && aGameBoard[i + 1, j ] == aGameBoard[i + 2, j] && aGameBoard[0, j] != ' ' && aGameBoard[1, j] != ' ' && aGameBoard[2, j] != ' ')
             {
                 bResult = true;
                 sWinnerName = aGameBoard[i, j].ToString();
@@ -58,7 +58,7 @@ public class supportClass
         } 
         
         // Check for column match \ this way
-        if (aGameBoard[0, 0] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 2])
+        if (aGameBoard[0, 0] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 2] && aGameBoard[0, 0] != ' ' && aGameBoard[1, 1] != ' ' && aGameBoard[2, 2] != ' ')
         {
             //Changes to declare winner, and assigns winner to X or O 
             bResult = true;
@@ -66,7 +66,7 @@ public class supportClass
         }
         
         // Check for column match / this way
-        else if (aGameBoard[0, 2] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 0])
+        else if (aGameBoard[0, 2] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 0] && aGameBoard[0, 2] != ' ' && aGameBoard[1, 1] != ' ' && aGameBoard[2, 0] != ' ')
         {
             //Changes to declare winner, and assigns winner to X or O 
             bResult = true;
