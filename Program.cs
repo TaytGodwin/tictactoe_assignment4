@@ -10,7 +10,12 @@ internal class Program
         //• Welcome the user to the game
         Console.WriteLine("Welcome to the game of Tic Tac Toe");
         //• Create a game board array to store the players’ choices
-        char[,] aaBoard = new char[3, 3];
+        char[,] aaBoard = {
+            {' ', ' ', ' ', },
+            {' ', ' ', ' ', },
+            {' ', ' ', ' ', }
+        };
+
         //• Ask each player in turn for their choice and update the game board array
         // Check if there is a winner for each loop
         while (supportClass.displayWinner(aaBoard).Item1 == false)
@@ -97,7 +102,7 @@ internal class Program
             iRowNum = checkInteger(Console.ReadLine());
 
             // Check if that position has been filled 
-            if (aaBoard[iRowNum - 1, iColumnNum - 1] is '\0')
+            if (aaBoard[iRowNum - 1, iColumnNum - 1] is ' ')
             {
                 bAlreadyFilled = false;
             }
