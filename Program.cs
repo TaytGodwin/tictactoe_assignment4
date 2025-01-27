@@ -1,6 +1,7 @@
 ﻿
 using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
+using tictactoe_assignment4;
 
 internal class Program
 {
@@ -12,13 +13,13 @@ internal class Program
         char[,] aaBoard = new char[3, 3];
         //• Ask each player in turn for their choice and update the game board array
         // Check if there is a winner for each loop
-        while (DisplayWinner(aaBoard)[0] == false)
+        while (supportClass.displayWinner(aaBoard).Item1 == false)
         {
             // Get player 1 input
             aaBoard = getInput(1, aaBoard);
 
             // Check if there is a winner now
-            if (DisplayWinner(aaBoard)[0] == false) // if false, get second player input, if not it will exit this loop automatically
+            if (supportClass.displayWinner(aaBoard).Item1 == false) // if false, get second player input, if not it will exit this loop automatically
             {
                 // Get player 2 input
                 aaBoard = getInput(2, aaBoard);
@@ -89,7 +90,7 @@ internal class Program
 
             // Get player input
             Console.WriteLine("The board is as follows:");
-            printBoard(aaBoard);
+            supportClass.printBoard(aaBoard);
             Console.WriteLine($"Player {iPlayer}, please choose which column you want to put your {sXorO} in. Input a number from 1-3 (example: 2)");
             iColumnNum = checkInteger(Console.ReadLine());
             Console.WriteLine($"Player {iPlayer}, please choose which row you want to put your {sXorO} in. Input a number from 1-3 (example: 2)");
