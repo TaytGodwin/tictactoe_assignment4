@@ -26,42 +26,52 @@ public class supportClass
         }
     }
     
-    //2nd Receives game board array as input and returns if there is a winner. 
-    // Display winner if winner exists 
-    public displayWinner(char[,] aGameBoard)
+    
+    public static (bool bResult, string sWinnerName) displayWinner(char[,] aGameBoard)
     {
+        //Sets variables
         bool bResult = false;
         string sWinnerName = "";
-        
-        // if (Checks for rows)
-        
-        for (int i = 0; i < aGameBoard.GetLength(0); i++) // loops through rows
+       
+        // Checks for row match
+        for (int i = 0; i < aGameBoard.GetLength(0); i++) 
         {
-            
-            for (int j = 0; j < aGameBoard.GetLength(1); j++) // loops through columns
+            int j = 0;
+            if (aGameBoard[i, j] == aGameBoard[i, j + 1] && aGameBoard[i, j + 1] == aGameBoard[i, j + 2])
             {
-                if (aGameBoard[0, 2] == aGameBoard[1, 2] && aGameBoard[1, 2] == aGameBoard[2, 2])
-                {
-                    
-                }
-                if (aGameBoard[i, j] == aGameBoard[i, j + 1] && aGameBoard[i, j + 1] == aGameBoard[i, j + 2])
-                {
-                    
-                }
-                
-      
+                bResult = true;
+                sWinnerName = aGameBoard[i, j].ToString();
+                break; 
             }
         }
         
+        // Checks for Column match
+        for (int j = 0; j < aGameBoard.GetLength(0); j++) 
+        {
+            int i = 0;
+            if (aGameBoard[i, j] == aGameBoard[i + 1 , j] && aGameBoard[i + 1, j ] == aGameBoard[i + 2, j])
+            {
+                bResult = true;
+                sWinnerName = aGameBoard[i, j].ToString();
+                break; 
+            }
+        } 
         
-        aGameBoard[0, 2] == aGameBoard[1, 2] && aGameBoard[1, 2] == aGameBoard[2, 2];
-        // Else if ( Checks for columns 
+        // Check for column match \ this way
+        if (aGameBoard[0, 0] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 2])
+        {
+            //Changes to declare winner, and assigns winner to X or O 
+            bResult = true;
+            sWinnerName = aGameBoard[1, 1].ToString();
+        }
         
-        //Else if (Checks for Diagonal \ ) 
-        
-        //Else if (Checks for other Diagonal /)  
-        
-        // else no winner yet returns false 
+        // Check for column match / this way
+        else if (aGameBoard[0, 2] == aGameBoard[1, 1] && aGameBoard[1, 1] == aGameBoard[2, 0])
+        {
+            //Changes to declare winner, and assigns winner to X or O 
+            bResult = true;
+            sWinnerName = aGameBoard[1, 1].ToString();
+        }
         
         // Returns array, first value as True or False, and second value as winner if winner exists. 
         return (bResult, sWinnerName);
