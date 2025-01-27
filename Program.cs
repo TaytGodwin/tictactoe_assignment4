@@ -27,9 +27,9 @@ internal class Program
         }
 
         //• Print the board one last time
-        PrintBoard(aaBoard);
+        supportClass.printBoard(aaBoard);
         //• Show the winner
-        Console.WriteLine($"The winner is {DisplayWinner(aaBoard)[1]}!");
+        Console.WriteLine($"The winner is {supportClass.displayWinner(aaBoard).Item1}!");
     }
 
     // Function to check integer input between 1 & 3
